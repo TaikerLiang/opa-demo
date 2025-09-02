@@ -16,5 +16,15 @@ services:
     depends_on:
       - trino
 
+  opa:
+    image: openpolicyagent/opa:0.69.0
+    container_name: opa
+    ports:
+      - "8181:8181"
+    command: ["run", "--server", "--addr", "0.0.0.0:8181", "/policy", "/data"]
+    volumes:
+      - ./policy:/policy
+      - ./data:/data
+
 volumes:
   cloudbeaver_data:

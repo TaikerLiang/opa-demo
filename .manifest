@@ -1,0 +1,4 @@
+{
+  "revision": "1.0",
+  "roots": ["policy", "data"]
+}

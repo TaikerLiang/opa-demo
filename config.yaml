@@ -1,0 +1,3 @@
+services:
+  authz:
+    resource: data.authz
