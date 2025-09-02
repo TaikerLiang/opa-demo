@@ -1,0 +1,75 @@
+!SESSION 2025-09-02 14:38:22.862 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=aarch64, WS=gtk, NL=en
+Framework arguments:  -product io.cloudbeaver.product.ce.product -web-config conf/cloudbeaver.conf -registryMultiLanguage -eclipse.keyring /home/dbeaver/.local/share/DBeaverData/secure/secure_storage
+Command-line arguments:  -product io.cloudbeaver.product.ce.product -web-config conf/cloudbeaver.conf -registryMultiLanguage -eclipse.keyring /home/dbeaver/.local/share/DBeaverData/secure/secure_storage
+
+!ENTRY org.eclipse.core.jobs 2 2 2025-09-02 14:38:25.018
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.jkiss.dbeaver.model.navigator.DBNModel$EventProcessingJob RUNNING
+	 at java.base/java.lang.Thread.sleep0(Native Method)
+	 at java.base/java.lang.Thread.sleep(Thread.java:509)
+	 at org.jkiss.dbeaver.utils.RuntimeUtils.pause(RuntimeUtils.java:188)
+	 at org.jkiss.dbeaver.model.navigator.DBNModel$EventProcessingJob.run(DBNModel.java:629)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-09-02 14:41:36.910 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=aarch64, WS=gtk, NL=en
+Framework arguments:  -product io.cloudbeaver.product.ce.product -web-config conf/cloudbeaver.conf -registryMultiLanguage -eclipse.keyring /home/dbeaver/.local/share/DBeaverData/secure/secure_storage
+Command-line arguments:  -product io.cloudbeaver.product.ce.product -web-config conf/cloudbeaver.conf -registryMultiLanguage -eclipse.keyring /home/dbeaver/.local/share/DBeaverData/secure/secure_storage
+
+!ENTRY org.eclipse.core.jobs 2 2 2025-09-02 14:41:38.289
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.jkiss.dbeaver.model.navigator.DBNModel$EventProcessingJob RUNNING
+	 at java.base/java.lang.Thread.sleep0(Native Method)
+	 at java.base/java.lang.Thread.sleep(Thread.java:509)
+	 at org.jkiss.dbeaver.utils.RuntimeUtils.pause(RuntimeUtils.java:188)
+	 at org.jkiss.dbeaver.model.navigator.DBNModel$EventProcessingJob.run(DBNModel.java:629)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-09-02 14:42:52.094 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=aarch64, WS=gtk, NL=en
+Framework arguments:  -product io.cloudbeaver.product.ce.product -web-config conf/cloudbeaver.conf -registryMultiLanguage -eclipse.keyring /home/dbeaver/.local/share/DBeaverData/secure/secure_storage
+Command-line arguments:  -product io.cloudbeaver.product.ce.product -web-config conf/cloudbeaver.conf -registryMultiLanguage -eclipse.keyring /home/dbeaver/.local/share/DBeaverData/secure/secure_storage
+
+!ENTRY org.eclipse.core.jobs 2 2 2025-09-02 14:42:57.497
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.jkiss.dbeaver.model.navigator.DBNModel$EventProcessingJob RUNNING
+	 at java.base/java.lang.Thread.sleep0(Native Method)
+	 at java.base/java.lang.Thread.sleep(Thread.java:509)
+	 at org.jkiss.dbeaver.utils.RuntimeUtils.pause(RuntimeUtils.java:188)
+	 at org.jkiss.dbeaver.model.navigator.DBNModel$EventProcessingJob.run(DBNModel.java:629)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-09-02 14:43:16.713 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=aarch64, WS=gtk, NL=en
+Framework arguments:  -product io.cloudbeaver.product.ce.product -web-config conf/cloudbeaver.conf -registryMultiLanguage -eclipse.keyring /home/dbeaver/.local/share/DBeaverData/secure/secure_storage
+Command-line arguments:  -product io.cloudbeaver.product.ce.product -web-config conf/cloudbeaver.conf -registryMultiLanguage -eclipse.keyring /home/dbeaver/.local/share/DBeaverData/secure/secure_storage
+
+!ENTRY org.eclipse.core.jobs 2 2 2025-09-02 14:43:19.829
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.jkiss.dbeaver.model.navigator.DBNModel$EventProcessingJob RUNNING
+	 at java.base/java.lang.Thread.sleep0(Native Method)
+	 at java.base/java.lang.Thread.sleep(Thread.java:509)
+	 at org.jkiss.dbeaver.utils.RuntimeUtils.pause(RuntimeUtils.java:188)
+	 at org.jkiss.dbeaver.model.navigator.DBNModel$EventProcessingJob.run(DBNModel.java:629)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-09-02 14:43:55.431 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=aarch64, WS=gtk, NL=en
+Framework arguments:  -product io.cloudbeaver.product.ce.product -web-config conf/cloudbeaver.conf -registryMultiLanguage -eclipse.keyring /home/dbeaver/.local/share/DBeaverData/secure/secure_storage
+Command-line arguments:  -product io.cloudbeaver.product.ce.product -web-config conf/cloudbeaver.conf -registryMultiLanguage -eclipse.keyring /home/dbeaver/.local/share/DBeaverData/secure/secure_storage
+
+!ENTRY org.eclipse.core.jobs 2 2 2025-09-02 14:43:57.310
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.jkiss.dbeaver.model.navigator.DBNModel$EventProcessingJob RUNNING
+	 at java.base/java.lang.Thread.sleep0(Native Method)
+	 at java.base/java.lang.Thread.sleep(Thread.java:509)
+	 at org.jkiss.dbeaver.utils.RuntimeUtils.pause(RuntimeUtils.java:188)
+	 at org.jkiss.dbeaver.model.navigator.DBNModel$EventProcessingJob.run(DBNModel.java:629)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
