@@ -21,10 +21,11 @@ services:
     container_name: opa
     ports:
       - "8181:8181"
-    command: ["run", "--server", "--addr", "0.0.0.0:8181", "/policy", "/data"]
+    command: ["run", "--server", "--addr", "0.0.0.0:8181", "--config-file", "/config.yaml", "--log-level", "debug", "/policy", "/data"]
     volumes:
       - ./policy:/policy
       - ./data:/data
+      - ./config.yaml:/config.yaml
 
 volumes:
   cloudbeaver_data:

@@ -1,3 +1,9 @@
 services:
   authz:
     resource: data.authz
+
+decision_logs:
+  console: true
+  reporting:
+    min_delay_seconds: 1
+    max_delay_seconds: 1
