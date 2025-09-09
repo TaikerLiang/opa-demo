@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "alice": {
+      "read:reports": true,
+      "query:tpch": true,
+      "read:catalog": true
+    },
+    "bob": {
+      "read:reports": true,
+      "query:tpch": true,
+      "read:catalog": true
+    }
+  }
+}
