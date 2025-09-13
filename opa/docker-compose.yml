@@ -1,0 +1,20 @@
+services:
+  opa:
+    image: openpolicyagent/opa:0.69.0
+    container_name: opa-standalone
+    ports:
+      - "8181:8181"
+    command: ["run", "--server", "--addr", "0.0.0.0:8181", "--config-file", "/config.yaml", "--log-level", "debug", "/policies", "/data"]
+    volumes:
+      - ./policies:/policies
+      - ./data:/data
+      - ../config.yaml:/config.yaml
+
+  opa-fmt:
+    image: openpolicyagent/opa:0.69.0
+    container_name: opa-fmt
+    profiles: ["tools"]
+    volumes:
+      - ./policies:/policies
+    working_dir: /
+    command: ["fmt", "-w", "/policies"]

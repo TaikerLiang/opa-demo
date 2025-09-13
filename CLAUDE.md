@@ -4,53 +4,72 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Architecture Overview
 
-This is a Docker-based demo environment for Trino and CloudBeaver:
+This is an Open Policy Agent (OPA) authorization system for Trino queries. The system provides fine-grained access control for Trino operations through policy-based authorization.
 
-- **Trino**: Distributed SQL query engine running on port 8080
-- **CloudBeaver**: Web-based database tool running on port 8978 that connects to Trino
-
-The setup uses Docker Compose to orchestrate two main services with persistent configuration and data volumes.
+- **OPA Server**: Runs on port 8181 and evaluates authorization policies
+- **Policy Structure**: Modular Rego policies organized by functionality
+- **Data-Driven**: Uses JSON files for user information and permissions
 
 ## Common Commands
 
-### Starting the Environment
+### Starting OPA Server
 ```bash
 docker-compose up -d
 ```
 
-### Stopping the Environment
+### Stopping OPA Server
 ```bash
 docker-compose down
 ```
 
-### View Service Logs
+### Running Policy Tests
 ```bash
-docker-compose logs trino
-docker-compose logs cloudbeaver
+opa test opa/tests/unit/authz/trino/
 ```
 
-### Access Points
-- Trino Web UI: http://localhost:8080
-- CloudBeaver: http://localhost:8978
+### View OPA Logs
+```bash
+docker-compose logs opa
+```
 
-## Configuration Structure
+### Policy Formatting
+```bash
+# Format policies in-place using Docker
+docker-compose --profile tools run --rm opa-fmt
 
-### Trino Configuration (`trino/`)
-- `config.properties`: Main Trino server configuration (coordinator, memory limits)
-- `jvm.config`: JVM settings for the Trino process
-- `node.properties`: Node-specific settings (environment, ID, data directory)
-- `catalog/`: Data source connectors (currently includes TPCH connector)
+# Or using docker directly
+docker run --rm -v "$(pwd)/opa/policies:/policies" openpolicyagent/opa:0.69.0 fmt -w /policies
+```
 
-### CloudBeaver Configuration (`cloudbeaver/`)
-- `conf/`: CloudBeaver application configuration
-- `workspace/`: User workspace and connection settings
+### Policy Validation
+```bash
+# Check formatting without changes
+docker run --rm -v "$(pwd)/opa/policies:/policies" openpolicyagent/opa:0.69.0 fmt --diff /policies
+```
 
-## Data Catalogs
+## Policy Architecture
 
-The demo includes a TPCH (Transaction Processing Performance Council) catalog for testing queries against generated benchmark data.
+### Entry Points (`policies/authz/trino/entrypoints/`)
+- `allow.rego`: Main authorization decision point that orchestrates all checks
 
-## Volume Mounts
+### Modules (`policies/authz/trino/modules/`)
+- `user_roles.rego`: User authentication and role management
+- `operations.rego`: Operation-specific authorization logic
 
-- Trino configurations are mounted from `./trino/etc/` to `/etc/trino/` in container
-- Trino data persistence: `./trino/data/` to `/data/trino/`
-- CloudBeaver configurations and workspace are persisted via volume mounts
+### Data Structure (`data/`)
+- `common/users.json`: User definitions with departments and attributes
+- `env/{dev,stage,prod}/permissions.json`: Environment-specific user permissions
+
+## Authorization Flow
+
+1. **Authentication**: Validates user exists in `data.users`
+2. **Operation Check**: Maps Trino operations to required permissions
+3. **Permission Validation**: Checks user has required permissions in environment data
+4. **Decision**: Returns allow/deny based on policy evaluation
+
+## Supported Operations
+
+- **Query Operations**: `SelectFromColumns` (requires `query:tpch`)
+- **Catalog Operations**: `ShowCatalogs`, `ShowSchemas`, `ShowTables` (require `read:catalog`)  
+- **Session Operations**: `SetUser`, `ExecuteQuery` (allowed for authenticated users)
+- **System Operations**: `ReadSystemInformation`, `AccessCatalog` (allowed for authenticated users)

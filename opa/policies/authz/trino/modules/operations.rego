@@ -1,7 +1,7 @@
 package authz.trino.modules.operations
 
-import rego.v1
 import data.authz.trino.modules.user_roles
+import rego.v1
 
 # Check if the requested operation is allowed
 is_allowed_operation if {
@@ -39,10 +39,10 @@ is_catalog_operation if {
 # Basic session operations (allowed for all authenticated users)
 is_session_operation if {
 	input.action.operation in [
-		"SetUser", 
-		"SetSessionUser", 
-		"ResetSessionUser", 
-		"ExecuteQuery"
+		"SetUser",
+		"SetSessionUser",
+		"ResetSessionUser",
+		"ExecuteQuery",
 	]
 	user_roles.is_authenticated_user
 }
@@ -50,9 +50,9 @@ is_session_operation if {
 # System information operations
 is_system_operation if {
 	input.action.operation in [
-		"ReadSystemInformation", 
-		"AccessCatalog", 
-		"FilterCatalogs"
+		"ReadSystemInformation",
+		"AccessCatalog",
+		"FilterCatalogs",
 	]
 	user_roles.is_authenticated_user
 }

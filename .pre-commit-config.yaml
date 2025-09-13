@@ -1,0 +1,11 @@
+repos:
+  - repo: local
+    hooks:
+      - id: opa-fmt
+        name: Format OPA policies
+        entry: make
+        args: [fmt]
+        language: system
+        files: \.rego$
+        pass_filenames: false
+        always_run: false

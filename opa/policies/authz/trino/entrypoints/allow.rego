@@ -1,8 +1,8 @@
 package authz.trino
 
-import rego.v1
-import data.authz.trino.modules.user_roles
 import data.authz.trino.modules.operations
+import data.authz.trino.modules.user_roles
+import rego.v1
 
 default allow := false
 
