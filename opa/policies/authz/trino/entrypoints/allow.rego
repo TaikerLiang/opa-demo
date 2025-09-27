@@ -25,7 +25,38 @@ allow if {
 	input.action == "read"
 }
 
-# Handle batch requests from Trino
+# Handle FilterCatalogs batch operations
 batch_allow := result if {
+	input.action.operation == "FilterCatalogs"
+	result := [i |
+		resource := input.action.filterResources[i]
+		allow with input as {
+			"context": input.context,
+			"action": {
+				"operation": "AccessCatalog",
+				"resource": resource
+			}
+		}
+	]
+}
+
+# Handle FilterTables batch operations
+batch_allow := result if {
+	input.action.operation == "FilterTables"
+	result := [i |
+		resource := input.action.filterResources[i]
+		allow with input as {
+			"context": input.context,
+			"action": {
+				"operation": "SelectFromColumns",
+				"resource": resource
+			}
+		}
+	]
+}
+
+# Handle other batch requests from Trino
+batch_allow := result if {
+	input.batch
 	result := [allow | input.batch[_]]
 }
