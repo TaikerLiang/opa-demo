@@ -1,0 +1,16 @@
+[project]
+name = "trino-client"
+version = "0.1.0"
+description = "Trino client for OPA demo"
+authors = [
+    {name = "Demo User", email = "demo@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "trino>=0.328.0"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

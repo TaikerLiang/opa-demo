@@ -23,8 +23,8 @@ services:
       - "8181:8181"
     command: ["run", "--server", "--addr", "0.0.0.0:8181", "--config-file", "/config.yaml", "--log-level", "debug", "/policy", "/data"]
     volumes:
-      - ./policy:/policy
-      - ./data:/data
+      - ./opa/policies:/policy
+      - ./opa/data:/data
       - ./config.yaml:/config.yaml
 
 volumes:

@@ -37,5 +37,5 @@ is_trino_user if {
 
 # Check if user is a regular authorized user
 is_regular_user if {
-	current_user in ["alice", "bob"]
+	current_user in ["alice", "bob", "test"]
 }
