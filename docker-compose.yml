@@ -13,6 +13,8 @@ services:
     container_name: cloudbeaver
     ports:
       - "8978:8978"
+    volumes:
+      - cloudbeaver_data:/opt/cloudbeaver/workspace
     depends_on:
       - trino
 
