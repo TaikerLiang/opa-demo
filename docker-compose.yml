@@ -27,7 +27,7 @@ services:
     volumes:
       - ./opa/policies:/policy
       - ./opa/data:/data
-      - ./config.yaml:/config.yaml
+      - ./opa/config.yaml:/config.yaml
 
 volumes:
   cloudbeaver_data:
