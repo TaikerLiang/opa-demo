@@ -1,4 +1,4 @@
-package authz.trino.modules.user_roles
+package authz.trino.user_roles
 
 import rego.v1
 
