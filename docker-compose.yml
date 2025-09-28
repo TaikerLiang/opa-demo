@@ -14,7 +14,7 @@ services:
     ports:
       - "8978:8978"
     volumes:
-      - cloudbeaver_data:/opt/cloudbeaver/workspace
+      - ./cloudbeaver/workspace:/opt/cloudbeaver/workspace
     depends_on:
       - trino
 
@@ -28,6 +28,3 @@ services:
       - ./opa/policies:/policy
       - ./opa/data:/data
       - ./opa/config.yaml:/config.yaml
-
-volumes:
-  cloudbeaver_data:
