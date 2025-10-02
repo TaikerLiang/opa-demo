@@ -28,3 +28,23 @@ services:
       - ./opa/policies:/policy
       - ./opa/data:/data
       - ./opa/config.yaml:/config.yaml
+
+  opa-test:
+    image: openpolicyagent/opa:0.69.0
+    command: ["test", "-v", "/tests"]
+    volumes:
+      - ./opa/tests:/tests
+      - ./opa/policies:/policies
+      - ./opa/data:/data
+    profiles:
+      - tools
+
+  opa-test-file:
+    image: openpolicyagent/opa:0.69.0
+    entrypoint: ["opa"]
+    volumes:
+      - ./opa/tests:/tests
+      - ./opa/policies:/policies
+      - ./opa/data:/data
+    profiles:
+      - tools

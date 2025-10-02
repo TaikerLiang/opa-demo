@@ -21,6 +21,12 @@ allow if {
 	input.context.identity.user == "alice"
 }
 
+# Allow users from testing department
+allow if {
+	user := input.context.identity.user
+	data.users[user].department == "testing"
+}
+
 # Explicitly deny Bob (for demo purposes)
 allow if {
 	input.context.identity.user == "bob"

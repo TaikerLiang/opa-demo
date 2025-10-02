@@ -9,3 +9,11 @@ repos:
         files: \.rego$
         pass_filenames: false
         always_run: false
+      - id: opa-test
+        name: Run OPA tests
+        entry: make
+        args: [test]
+        language: system
+        files: ^opa/
+        pass_filenames: false
+        always_run: false
