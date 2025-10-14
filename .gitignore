@@ -1,1 +1,4 @@
 trino/data/
+
+# CloudBeaver workspace (contains user settings, credentials, cache)
+cloudbeaver/workspace/
